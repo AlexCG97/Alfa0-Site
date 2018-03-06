@@ -1,18 +1,18 @@
-<?
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "gestioneambulanze";
  
 $usernameinserito = $_POST["Username"];
- 
+
 $conn = mysqli_connect($servername, $username, $password, $dbname); 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+if(! $conn ) {
+      die('Errore: ' . mysqli_error());
+   }
 
 $datiScheda = array(); 
-$query = 'SELECT * from chiamate WHERE assegnato = 0 AND macchinaAssegnata = "'.$usernameinserito.'"';
+$query = 'SELECT ID_Chiamata, Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice from chiamate WHERE assegnato = 0 AND macchinaAssegnata = "'.$usernameinserito.'"';
  
 $stmt = $conn->prepare($query);
 $stmt->execute();
@@ -40,3 +40,5 @@ while($stmt->fetch()){
 }
   
 echo json_encode($datiScheda);
+
+?>
