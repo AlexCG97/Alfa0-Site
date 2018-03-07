@@ -4,7 +4,7 @@ $username = "root";
 $password = "";
 $dbname = "gestioneambulanze";
 
-$usernameinserito = $_POST["Username"];
+$usernameinserito = "Alfa 1";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 mysqli_query($conn, "SET NAMES 'utf'");
