@@ -1,10 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gestioneambulanze";
+require_once('dati.php');
 
-$usernameinserito = "Alfa 1";
+$usernameinserito = "Alfa 1"; //da modificare con quello passato
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 mysqli_query($conn, "SET NAMES 'utf'");

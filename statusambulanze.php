@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gestioneambulanze";
+require_once('dati.php');
    
    $conn = mysqli_connect($servername, $username, $password);
    

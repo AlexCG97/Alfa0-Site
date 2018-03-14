@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gestioneambulanze";
+require_once('dati.php');
 
 $usernameinserito = $_POST["UserName"];
 $passwordinsertita = $_POST["Password"];

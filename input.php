@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gestioneambulanze";
+require_once('dati.php');
 
 $nome = $_POST['nome'];
 $cognome = $_POST['cognome'];

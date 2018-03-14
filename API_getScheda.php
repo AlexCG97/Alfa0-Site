@@ -1,11 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gestioneambulanze";
+require_once('dati.php');
  
 //$usernameinserito = $_POST["Username"];
-$usernameinserito = "test";
+$usernameinserito = "Alfa 1";
 $conn = mysqli_connect($servername, $username, $password, $dbname); 
 if(! $conn ) {
       die('Errore: ' . mysqli_error());
