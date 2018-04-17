@@ -1,6 +1,6 @@
 <?php
 require_once('dati.php');
- 
+
 $usernameinserito = $_POST["Username"];
 $conn = mysqli_connect($servername, $username, $password, $dbname); 
 if(! $conn ) {
@@ -10,13 +10,11 @@ if(! $conn ) {
 $datiScheda = array(); 
 $query = 'SELECT ID_Chiamata, Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice, attivo from chiamate WHERE assegnato = 0 AND macchinaAssegnata = "'.$usernameinserito.'"';
  
-$stmt = $conn->prepare($query);
-$stmt->execute();
+$ query = $conn->prepare($query);
+$query->execute();
+$ query->bind_result($idChiamata, $nome, $cognome, $dataNascita, $via, $numero, $citta, $comune, $cap, $motivoChiamata, $operatore, $codice, $attivo);
  
-$stmt->bind_result($idChiamata, $nome, $cognome, $dataNascita, $via, $numero, $citta, $comune, $cap, $motivoChiamata, $operatore, $codice, $attivo);
- 
-while($stmt->fetch()){
- 
+while($ query->fetch()){
  $temp = [
  'ID_chiamata'=>$idChiamata,
  'Nome'=>$nome,
@@ -32,10 +30,7 @@ while($stmt->fetch()){
  'codice'=>$codice,
  'attivo'=>$attivo,
  ];
- 
  array_push($datiScheda, $temp);
 }
-  
 echo json_encode($datiScheda);
-
 ?>

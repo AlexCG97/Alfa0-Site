@@ -31,17 +31,13 @@ $con=mysqli_connect($servername,$username,$password,$dbname);
       <title>Login</title>
    </head>
    <body>
-      <div>
-         <div>
             <div><b>Login</b></div>				
             <div>              
                <form action = "" method = "post">
-                  <label>Username  :</label><input type = "text" name = "Username" class = "box"/><br /><br />
-                  <label>Password  :</label><input type = "password" name = "Password" class = "box" /><br/><br />
+                  <label>Username  :</label><input type = "text" name = "Username" class = "box" required  /><br /><br />
+                  <label>Password  :</label><input type = "password" name = "Password" class = "box" required /><br/><br />
                   <input type = "submit" value = " Submit "/><br />
                </form>
             </div>				
-         </div>
-      </div>
    </body>
 </html>

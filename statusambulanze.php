@@ -14,7 +14,7 @@ require_once('dati.php');
    if(! $retval ) {
       die('Impossibile recuperare i dati: ' . mysqli_error());
    }
-   
+ 
    while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
       echo "Ambulanza Nome:{$row['Nome']}  <br> ".
          "Ambulanza Targa: {$row['Targa']} <br> ".
@@ -24,6 +24,5 @@ require_once('dati.php');
    }
    
    echo "Dati recuperati con successo\n";
-   
    mysqli_close($conn);
 ?>
