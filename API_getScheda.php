@@ -10,11 +10,11 @@ if(! $conn ) {
 $datiScheda = array(); 
 $query = 'SELECT ID_Chiamata, Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice, attivo from chiamate WHERE assegnato = 0 AND macchinaAssegnata = "'.$usernameinserito.'"';
  
-$ query = $conn->prepare($query);
+$query = $conn->prepare($query);
 $query->execute();
-$ query->bind_result($idChiamata, $nome, $cognome, $dataNascita, $via, $numero, $citta, $comune, $cap, $motivoChiamata, $operatore, $codice, $attivo);
+$query->bind_result($idChiamata, $nome, $cognome, $dataNascita, $via, $numero, $citta, $comune, $cap, $motivoChiamata, $operatore, $codice, $attivo);
  
-while($ query->fetch()){
+while($query->fetch()){
  $temp = [
  'ID_chiamata'=>$idChiamata,
  'Nome'=>$nome,
