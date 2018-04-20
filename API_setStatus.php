@@ -13,8 +13,6 @@ if(! $conn ) {
 
 if($status == "partenza"){
 		$query = $conn->query("UPDATE chiamate SET OrarioPartenza = '$Data' WHERE ID_chiamata LIKE '$id'");
-	//$query = $conn->prepare($query);
-	//query->execute();
 } else if($status == "arrivoPosto"){
 		$query = $conn->query("UPDATE chiamate SET Orario_ArrivoPosto = '$Data' WHERE ID_chiamata LIKE '$id'");
 }else if($status == "bianco"){
@@ -31,14 +29,11 @@ if($status == "partenza"){
 		$query = $conn->query("UPDATE chiamate SET Orario_Libero = '$Data' WHERE ID_chiamata LIKE '$id'");
 }
 
-if($query)
-{
-echo "Success";
-
+if($query){
+	echo "Success";
 }
-else
-{
-echo "Error";
+else{
+	echo "Error";
 
 }
 ?>
