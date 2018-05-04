@@ -6,14 +6,31 @@
 	<title>
 		<?php
 			session_start();
+			$username = $_SESSION['login_user'];
 		?>
 	 Homepage - V 1.0
 	 <link rel="stylesheet" href="styles.css">
 	</title>
 	</head>
 	<body>
-		<div>
-			<p center>Benvenuto</p>
+		<div id="header">
+			<p>Benvenuto <?php echo $username ?></p>
+		</div>
+		<div id="center">
+			<div id="inserisciChiamata">
+			
+			</div>
+			<div id="vediChiamate">
+			
+			</div>
+			<div id="StatusAmbulanze">
+			
+			</div>
+			<!--//TODO-->
+		</div>
+		<div id="footer">
+		<!--//TODO-->
+			Created by Alex Ghiurca.
 		</div>
 	</body>
 </html>
