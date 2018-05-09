@@ -1,29 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "gestioneambulanze";
-$con=mysqli_connect($servername,$username,$password,$dbname);
    session_start();
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {     
-      $myusername = $_POST['Username'];
-      $mypassword = $_POST['Password']; 
-      
-      $sql = "SELECT ID_Utenti FROM utenti WHERE Username = '$myusername' and Password = '$mypassword'";
-      $result = mysqli_query($con,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-      $count = mysqli_num_rows($result);	
-      if($count == 1) {
-         //session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
-         header("location: home.html");
-      }else {
-         $error = "Username o Password non corrette.";
-         echo($error);
-      }
-   }
 ?>
 <html>
 <head>
@@ -83,19 +59,17 @@ span.psw {
     float: right;
     padding-top: 16px;
 }
-
 </style>
 </head>
 <body>
 
 <h2>Login Form</h2>
-
-<form action="home.html" method="post">
   <div class="imgcontainer">
     <img src="ambu.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
+    <form action="checkdata.php" method="post">
     <label for="uname"><b>Username</b></label><br>
     <input type="text" placeholder="Enter Username" name="Username" required><br>
 
@@ -103,8 +77,8 @@ span.psw {
     <input type="password" placeholder="Enter Password" name="Password" required>
         
     <button type="submit">Login</button>
+  </form>
   </div>
-</form>
 
 </body>
 </html>
