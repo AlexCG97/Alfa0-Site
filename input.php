@@ -12,12 +12,13 @@ $data = $_POST['data'];
 $chiamata = $_POST['chiamata'];
 $codice = $_POST['codice'];
 $operatore = $_POST['operatore'];
+$macchina = $_POST['ambulanza'];
 
 $conn = new mysqli($servername, $username, $password, $dbname); //creazione della connessione col db
 if ($conn->connect_error) {
     die("Connessione fallita: " . $conn->connect_error);
 } 
-$sql = "INSERT INTO chiamate (Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice)
+$sql = "INSERT INTO chiamate (Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice, macchinaAssegnata)
 VALUES ('$nome',
 			'$cognome',
 			'$data',
@@ -28,7 +29,8 @@ VALUES ('$nome',
 			'$cap',
 			'$chiamata',
 			'$operatore',
-			'$codice')";
+			'$codice',
+			'$macchina')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record creato correttamente";

@@ -1,9 +1,10 @@
 <?php
+require_once('dati.php');
 session_start();
 if(!isset($_SESSION['login_user'])){
    header("Location:login.php");
 }else {
-  $username = $_SESSION['login_user'];
+  $usernameWeb = $_SESSION['login_user'];
 }
 ?>
 <html>
@@ -33,7 +34,7 @@ footer {
   <nav>
       <div class="nav-wrapper green darken-2">
         <img src="ambu.png" class="responsive-img" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;width: 50px;"> 
-         <span class="indigo-text center-align" id="header-large" style="font-weight:300;font-size:1.3rem;">Benvenuto, <b><?php echo $username ?></b></span>
+         <span class="indigo-text center-align" id="header-large" style="font-weight:300;font-size:1.3rem;">Benvenuto, <b><?php echo $usernameWeb ?></b></span>
       </div>
     </nav>
 
@@ -94,10 +95,28 @@ footer {
       </div>
       <div class="row">
         <div class="input-field col s3">
-          <input disabled value=<?php $username ?> id="operatore" type="text" class="validate">
-          <label for="disabled">Operatore</label>
+          <input value="Operatore" id="operatore" name="operatore" type="text" class="validate">
+          <label for="operatore">Operatore</label>
         </div>
-
+        <div class="input-field col s3">
+          <?php
+          $conn = mysqli_connect($servername, $username, $password, $dbname);
+          $sql = 'SELECT Username FROM utenti WHERE Ruolo="ambulanza" AND Occupato="0" ';
+          $result = mysqli_query($conn, $sql);
+          if (mysqli_num_rows($result) > 0) {
+          echo"<select name='ambulanza'>";
+          while($row = mysqli_fetch_assoc($result)) {
+          $ID=$row["ID_Utenti"];
+          $name=$row["Username"];
+          echo"<option value=" .$ID." name='ambulanza'>".$name."</option>"  ; //da fixare la query che inserisce
+          }
+   
+   echo"</select>";
+   echo "<br>";
+} else {
+   echo "0 results";   
+} ?>
+        </div>
       </div>
       <div class="row">
         <input type="submit" name="submit" value="Sent">
