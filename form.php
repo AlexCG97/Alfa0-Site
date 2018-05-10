@@ -88,7 +88,7 @@ footer {
         <option value="bianco"> Bianco </option>
         <option value="verde"> Verde </option>
         <option value="giallo"> Giallo </option>
-        <option value="Rosso"> Rosso </option>
+        <option value="rosso"> Rosso </option>
       </select>
         <label>Codice Emergenza</label>
       </div>
@@ -106,13 +106,10 @@ footer {
           if (mysqli_num_rows($result) > 0) {
           echo"<select name='ambulanza'>";
           while($row = mysqli_fetch_assoc($result)) {
-          $ID=$row["ID_Utenti"];
           $name=$row["Username"];
-          echo"<option value=" .$ID." name='ambulanza'>".$name."</option>"  ; //da fixare la query che inserisce
+          echo '<option value="'.$row["Username"].'">'.$row["Username"].'</option>';
           }
-   
    echo"</select>";
-   echo "<br>";
 } else {
    echo "0 results";   
 } ?>
@@ -123,86 +120,7 @@ footer {
       </div>
     </form>
   </div>
-<!--<table border="0">
-  <tr>
-    <td align="center">Inserisci i dati richiesti</td>
-  </tr>
-  <tr>
-    <td>
-      <table>
-        <form method="post" action="input.php">
-        <tr>
-          <td>Nome</td>
-          <td><input type="text" name="nome" size="20">
-          </td>
-        </tr>
-		<tr>
-          <td>Cognome</td>
-          <td><input type="text" name="cognome" size="20">
-		  </td>
-        </tr>
-        <tr>
-          <td>Via</td>
-          <td><input type="text" name="via" size="20">
-        </td>
-        </tr>
-		<tr>
-          <td>Numero</td>
-          <td><input type="text" name="numero" size="20">
-          </td>
-        </tr>
-		<tr>
-          <td>Città</td>
-          <td><input type="text" name="citta" size="20">
-          </td>
-        </tr>
-		<tr>
-          <td>Comune</td>
-          <td><input type="text" name="comune" size="20">
-          </td>
-        </tr>
-		<tr>
-          <td>CAP</td>
-          <td><input type="number" name="cap" size="20">
-          </td>
-        </tr>
-		<tr>
-          <td>Data Di Nascita</td>
-          <td><input type="date" name="data" size="20">
-          </td>
-        </tr>
-		<tr>
-          <td>Motivo Chiamata</td>
-          <td><input type="text" name="chiamata" size="20">
-          </td>
-        </tr>
-		<tr>
-          <td>Codice</td>
-          <td>
-		  <select name="codice">
-			<option value="bianco" selected> Bianco </option>
-			<option value="verde"> Verde </option>
-			<option value="giallo"> Giallo </option>
-			<option value="Rosso"> Rosso </option>
-		  </select>
-          </td>
-        </tr>
-		<tr>
-          <td>Operatore</td>
-          <td><input type="text" name="operatore" size="40">
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td align="right"><input type="submit" 
-          name="submit" value="Sent"></td>
-        </tr>
-        </form>
-        </table>
-      </td>
-    </tr>
-</table>
--->
+
 <footer class="page-footer green darken-2">
     <div class="container">
         Created by Alex Ghiurca Copyright &copy; 

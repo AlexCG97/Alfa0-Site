@@ -45,14 +45,21 @@ footer {
          <table>
             <thead>
                <tr>
-                  <th>Nome Ambulanza</th>
-                  <th>Ambulanza Targa</th>
-                  <th>Status Ambulanza</th>
+                  <th>ID Chiamata</th>
+                  <th>Nome</th>
+                  <th>Cognome</th>
+                  <th>Via</th>
+                  <th>Numero</th>
+                  <th>Citta</th>
+                  <th>Comune</th>
+                  <th>Motivo Chiamata</th>
+                  <th>Codice</th>
+                  <th>Macchina Assegnata </th>
                </tr>
             </thead>
             <tbody>
                <?php
-                  $sql = 'SELECT Username, Targa, Occupato FROM utenti WHERE ruolo="ambulanza"';
+                  $sql = 'SELECT ID_Chiamata, Nome, Cognome, Via, Numero, Citta, Comune, Motivo_chiamata, codice, macchinaAssegnata FROM chiamate';
                   mysqli_select_db($conn, $dbname);
                   $retval = mysqli_query( $conn, $sql);
                   if(! $retval ) {
@@ -61,13 +68,25 @@ footer {
                   while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)) {
                      echo("<tr>");
                      echo("<td>");
-                     echo($row['Username']);
+                     echo($row['ID_Chiamata']);
                      echo("</td> <td>");
-                     echo($row['Targa']);
+                     echo($row['Nome']);
                      echo("</td> <td>");
-                     if($row['Occupato'] == '0'){
-                        echo("Libero");} 
-                        else { echo("Occupato");};
+                     echo($row['Cognome']);
+                     echo("</td> <td>");
+                     echo($row['Via']);
+                     echo("</td> <td>");
+                     echo($row['Numero']);
+                     echo("</td> <td>");
+                     echo($row['Citta']);
+                     echo("</td> <td>");
+                     echo($row['Comune']);
+                     echo("</td> <td>");
+                     echo($row['Motivo_chiamata']);
+                     echo("</td> <td>");
+                     echo($row['codice']);
+                     echo("</td> <td>");
+                     echo($row['macchinaAssegnata']);
                      echo("</td></tr>");
                   }
    ?>

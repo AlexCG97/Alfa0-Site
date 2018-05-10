@@ -94,7 +94,7 @@ body {
           				<p>Visualizza lo status delle ambulanze disponibili.</p>
         			</div>
         			<div class="card-action">
-          				<a href="#">Clicca qui</a>
+          				<a href="statusambulanze.php">Clicca qui</a>
         			</div>
       			</div>
     		</div>
@@ -108,7 +108,7 @@ body {
           				<p>Visualizza tutte le missioni inserite e quelle al momento attive.</p>
         			</div>
         			<div class="card-action">
-          				<a href="#">Clicca qui</a>
+          				<a href="chiamate.php">Clicca qui</a>
         			</div>
       			</div>
     		</div>
