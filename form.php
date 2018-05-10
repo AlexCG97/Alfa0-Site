@@ -8,8 +8,20 @@ if(!isset($_SESSION['login_user'])){
 ?>
 <html>
 <head>
+  <style>
+footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    text-align: center;
+  width:100%;
+  position: fixed;
+    bottom: 0;
+}
+</style>
 	<title>Inserimento Dati</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
@@ -26,57 +38,69 @@ if(!isset($_SESSION['login_user'])){
     </nav>
 
     <div class="row">
-    <form class="col s12">
+    <form class="col s12" method="post" action="input.php">
       <div class="row">
         <div class="input-field col s3">
-                <input id="cognome" type="text" class="validate">
+          <i class="material-icons prefix">account_circle</i>
+                <input id="cognome" type="text" name="cognome" class="validate">
                 <label for="cognome" class="active">Cognome</label>
             </div>
         <div class="input-field col s3">
-          <input id="nome" type="text" class="validate">
+          <input id="nome" type="text" name="nome" class="validate">
           <label for="nome" class="active">Nome</label>
         </div>
         <div class="input-field col s3">
-          <input id="data" type="date" class="validate">
+          <input id="data" type="date" name="data" class="validate">
           <label for="data" class="active">Data di Nascita</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s3">
-          <input id="via" type="text" class="validate">
+          <input id="via" type="text" name="via" class="validate">
           <label for="via" class="active">Via</label>
         </div>
         <div class="input-field col s3">
-          <input id="numero" type="number" class="validate">
+          <input id="numero" type="number" name="numero" class="validate">
           <label for="numero" class="active">Numero</label>
         </div>
         <div class="input-field col s2">
-          <input id="citta" type="text" class="validate">
+          <input id="citta" type="text" name="citta" class="validate">
           <label for="citta" class="active">Città</label>
         </div>
         <div class="input-field col s2">
-          <input id="comune" type="text" class="validate">
+          <input id="comune" type="text" name="comune" class="validate">
           <label for="comune" class="active">Comune</label>
         </div>
         <div class="input-field col s2">
-          <input id="cap" type="number" class="validate">
+          <input id="cap" type="number" name="cap" class="validate">
           <label for="cap" class="active">CAP</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input id="chiamata" type="text" class="validate">
+          <input id="chiamata" type="text" name="chiamata" class="validate">
           <label for="chiamata" class="active">Motivo della chiamata</label>
         </div>
-        <div class="input-field col s6">
-        <select>
-          <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
-        <label>Materialize Select</label>
+        <div class="input-field col s3">
+      <select name="codice">
+        <option value="" disabled selected>Colore</option>
+        <option value="bianco"> Bianco </option>
+        <option value="verde"> Verde </option>
+        <option value="giallo"> Giallo </option>
+        <option value="Rosso"> Rosso </option>
+      </select>
+        <label>Codice Emergenza</label>
       </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s3">
+          <input disabled value=<?php $username ?> id="operatore" type="text" class="validate">
+          <label for="disabled">Operatore</label>
+        </div>
+
+      </div>
+      <div class="row">
+        <input type="submit" name="submit" value="Sent">
       </div>
     </form>
   </div>
@@ -163,11 +187,14 @@ if(!isset($_SESSION['login_user'])){
 <footer class="page-footer green darken-2">
     <div class="container">
         Created by Alex Ghiurca Copyright &copy; 
-      </div>
+    </div>
 </footer>
 <!--JavaScript at end of body for optimized loading-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
-
+<script> 
+$(document).ready(function() {
+    $('select').material_select();
+});
+</script>
 </body>
 </html>

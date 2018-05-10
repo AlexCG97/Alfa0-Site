@@ -80,7 +80,7 @@ body {
           				<p>Inserisci una nuova missione da inviare ad una ambulanza.</p>
         			</div>
         			<div class="card-action">
-          				<a href="#">Clicca qui</a>
+          				<a href="form.php">Clicca qui</a>
         			</div>
       			</div>
     		</div>
