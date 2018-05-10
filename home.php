@@ -47,20 +47,14 @@ footer {
     right: auto;
 }
 
-img.add {
-    width: 50%;
-    border-radius: 50%;
-}
-
 body {
 	font-family: "Roboto";
-
 }
 	</style>
 	<title>
-	 Homepage - V 1.0
-	 <link rel="stylesheet" href="styles.css">
+	 Homepage - V 1.0	
 	</title>
+	<link rel="stylesheet" href="styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -71,7 +65,7 @@ body {
 	<body>
 		<nav>
 			<div class="nav-wrapper green darken-2">
-				<img src="ambu.png" alt="" class="responsive-img" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;">
+				<img src="ambu.png" class="responsive-img" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;width: 50px;"> 
 				 <span class="indigo-text center-align" id="header-large" style="font-weight:300;font-size:1.3rem;">Benvenuto, <b><?php echo $username ?></b></span>
 			</div>
 		</nav>
@@ -80,7 +74,7 @@ body {
       			<div class="card">
         			<div class="card-image">
          	 			<img src="add.png" alt="add" class="add">
-         			 	<span class="card-title">Aggiungi Chiamata</span>
+         			 	<span class="card-title grey-text text-darken-4"><b>Aggiungi Chiamata</b></span>
        		 		</div>
         			<div class="card-content">
           				<p>Inserisci una nuova missione da inviare ad una ambulanza.</p>
@@ -93,8 +87,8 @@ body {
     		<div class="col s10	m3">
       			<div class="card">
         			<div class="card-image">
-         	 			<img src="add.png" alt="add" class="add">
-         			 	<span class="card-title">Visualizza Status Ambulanze</span>
+         	 			<img src="ambu1.png" alt="ambu1" class="ambu1">
+         			 	<span class="card-title grey-text text-darken-4"><b>Visualizza Status Ambulanze</b></span>
        		 		</div>
         			<div class="card-content">
           				<p>Visualizza lo status delle ambulanze disponibili.</p>
@@ -107,8 +101,8 @@ body {
     		<div class="col s10	m3">
       			<div class="card">
         			<div class="card-image">
-         	 			<img src="add.png" alt="add" class="add">
-         			 	<span class="card-title">Visualizza Missioni</span>
+         	 			<img src="chiamata.png" alt="chiamata" class="chiamata">
+         			 	<span class="card-title grey-text text-darken-4"> <b> Visualizza Missioni</b></span>
        		 		</div>
         			<div class="card-content">
           				<p>Visualizza tutte le missioni inserite e quelle al momento attive.</p>
@@ -125,6 +119,9 @@ body {
 			</div>
 		</footer>
 		<!--JavaScript at end of body for optimized loading-->
-		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		 
+
 	</body>
 </html>
