@@ -1,17 +1,22 @@
 <?php
 require_once('dati.php');
 
-$usernameinserito = $_POST["UserName"];
-$passwordinsertita = $_POST["Password"];
+$usernameinserito = $_POST["Username"];
+$passwordinserita = $_POST["Password"];
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-mysqli_query($conn, "SET NAMES 'utf'");
-$query = 'SELECT ID_Utenti from utenti WHERE Username = "'.$usernameinserito.'" and password = "'.$passwordinsertita.'"';
-$result = mysqli_query($conn, $query) or die('error: ' .mysql_error());
+     $sql = "SELECT * FROM utenti WHERE Username = '$usernameinserito'";
+      $result = mysqli_query($conn,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $count = mysqli_num_rows($result);	
+      if($count == 1) {
+         if(password_verify($passwordinserita, $row['Password'])){
+         	echo("success");
+         }
+         else{
+            echo("error");
+         }
+      }else {
+         echo("error");
+      }
 
-if(mysqli_num_rows(($result)) == 1) {
-	echo "success";
-}
-else{
-	echo "error";
-}
 ?>
