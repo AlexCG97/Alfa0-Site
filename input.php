@@ -18,7 +18,7 @@ $conn = new mysqli($servername, $username, $password, $dbname); //creazione dell
 if ($conn->connect_error) {
     die("Connessione fallita: " . $conn->connect_error);
 } 
-$sql = "INSERT INTO chiamate (Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice, macchinaAssegnata)
+$sql = "INSERT INTO chiamate (Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice, macchinaAssegnata, attivo)
 VALUES ('$nome',
 			'$cognome',
 			'$data',
@@ -30,7 +30,8 @@ VALUES ('$nome',
 			'$chiamata',
 			'$operatore',
 			'$codice',
-			'$macchina')";
+			'$macchina',
+		 	'1')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record creato correttamente";

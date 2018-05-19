@@ -8,7 +8,7 @@ if(! $conn ) {
    }
 
 $datiScheda = array(); 
-$query = 'SELECT ID_Chiamata, Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice, attivo from chiamate WHERE assegnato = 0 AND macchinaAssegnata = "'.$usernameinserito.'"';
+$query = 'SELECT ID_Chiamata, Nome, Cognome, Data_di_nascita, Via, Numero, Citta, Comune, CAP, Motivo_chiamata, Operatore, codice, attivo from chiamate WHERE attivo = 1 AND macchinaAssegnata = "'.$usernameinserito.'"';
  
 $query = $conn->prepare($query);
 $query->execute();
