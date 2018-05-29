@@ -65,7 +65,7 @@ span.psw {
 
 <h2>Login Form</h2>
   <div class="imgcontainer">
-    <img src="ambu.png" alt="Avatar" class="avatar">
+    <img src="img/ambu.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">

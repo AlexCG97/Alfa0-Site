@@ -25,7 +25,7 @@
 	<body>
 		<nav>
 			<div class="nav-wrapper green darken-2">
-				<img src="ambu.png" class="responsive-img" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;width: 50px;"> 
+				<img src="img/ambu.png" class="responsive-img" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;width: 50px;"> 
 				<span class="white-text center-align" id="header-large" style="font-weight:300;font-size:1.3rem;">Benvenuto</b></span>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
         			<li><a href="home.php">Home</a></li>
@@ -34,7 +34,7 @@
 		</nav>
 
 		<div class="row">
-    <form class="col s12" method="post" action="API_registrazione.php">
+    <form class="col s12" method="post" action="API/API_registrazione.php">
       <div class="row">
         <div class="input-field col s3">
           <i class="material-icons prefix">account_circle</i>

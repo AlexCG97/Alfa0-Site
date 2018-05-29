@@ -35,6 +35,7 @@ VALUES ('$nome',
 
 if ($conn->query($sql) === TRUE) {
     echo "Record creato correttamente";
+    header('Location: home.php');
 	
 } else {
     echo "Errore: " . $sql . "<br>" . $conn->error;

@@ -65,7 +65,7 @@ body {
 	<body>
 		<nav>
 			<div class="nav-wrapper green darken-2">
-				<img src="ambu.png" class="responsive-img" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;width: 50px;"> 
+				<img src="img/ambu.png" class="responsive-img" style="vertical-align: middle;margin-bottom:10px;margin-right:10px;width: 50px;"> 
 				<span class="white-text center-align" id="header-large" style="font-weight:300;font-size:1.3rem;">Benvenuto, <b><?php echo $username ?></b></span>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
         			<li><a href="home.php">Home</a></li>
@@ -77,7 +77,7 @@ body {
 			<div class="col s10	m3">
       			<div class="card">
         			<div class="card-image">
-         	 			<img src="add.png" alt="add" class="add">
+         	 			<img src="img/add.png" alt="add" class="add">
          			 	<span class="card-title grey-text text-darken-4"><b>Aggiungi Chiamata</b></span>
        		 		</div>
         			<div class="card-content">
@@ -91,7 +91,7 @@ body {
     		<div class="col s10	m3">
       			<div class="card">
         			<div class="card-image">
-         	 			<img src="ambu1.png" alt="ambu1" class="ambu1">
+         	 			<img src="img/ambu1.png" alt="ambu1" class="ambu1">
          			 	<span class="card-title grey-text text-darken-4"><b>Visualizza Status Ambulanze</b></span>
        		 		</div>
         			<div class="card-content">
@@ -105,7 +105,7 @@ body {
     		<div class="col s10	m3">
       			<div class="card">
         			<div class="card-image">
-         	 			<img src="chiamata.png" alt="chiamata" class="chiamata">
+         	 			<img src="img/chiamata.png" alt="chiamata" class="chiamata">
          			 	<span class="card-title grey-text text-darken-4"> <b> Visualizza Missioni</b></span>
        		 		</div>
         			<div class="card-content">
