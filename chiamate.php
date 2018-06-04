@@ -11,27 +11,27 @@ if(!isset($_SESSION['login_user'])){
    $usernameWeb = $_SESSION['login_user'];
 }
 ?>
-
+<!DOCTYPE HTML>
 <html>
    <head>
-      <link rel="stylesheet" href="styles.css">
+      <title>Chiamate - Alfa0 </title>
+      <meta charset="utf-8">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
       <style>
-footer {
-    padding: 1em;
-    color: white;
-    background-color: black;
-    text-align: center;
-   width:100%;
-   position: fixed;
-    bottom: 0;
-}
+      footer {
+      padding: 1em;
+      color: white;
+      background-color: black;
+      text-align: center;
+      width:100%;
+      position: fixed;
+      bottom: 0;
+      }
 </style>
    </head>
    <body>
@@ -63,7 +63,7 @@ footer {
             </thead>
             <tbody>
                <?php
-                  $sql = 'SELECT ID_Chiamata, Nome, Cognome, Via, Numero, Citta, Comune, Motivo_chiamata, codice, macchinaAssegnata FROM chiamate';
+                  $sql = 'SELECT ID_Chiamata, Nome, Cognome, Via, Numero, Citta, Comune, Motivo_chiamata, codice, macchinaAssegnata FROM chiamate ORDER BY ID_Chiamata DESC';
                   mysqli_select_db($conn, $dbname);
                   $retval = mysqli_query( $conn, $sql);
                   if(! $retval ) {

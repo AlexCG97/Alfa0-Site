@@ -6,18 +6,19 @@ if(!isset($_SESSION['login_user'])){
 	$username = $_SESSION['login_user'];
 }
 ?>
+<!DOCTYPE HTML>
 <html>
 	<head>
 	<style>
-footer {
+  footer {
     padding: 1em;
     color: white;
     background-color: black;
     text-align: center;
-	width:100%;
-	position: fixed;
+	  width:100%;
+	  position: fixed;
     bottom: 0;
-}
+    }
 
 #header {
     overflow: hidden;
@@ -51,16 +52,14 @@ body {
 	font-family: "Roboto";
 }
 	</style>
-	<title>
-	 Homepage - V 1.0	
-	</title>
-	<link rel="stylesheet" href="styles.css">
+	<title> Homepage - V 1.0	</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="utf-8">
 	</head>
 	<body>
 		<nav>

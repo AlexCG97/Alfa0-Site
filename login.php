@@ -1,6 +1,7 @@
 <?php
    session_start();
 ?>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,10 +61,12 @@ span.psw {
     padding-top: 16px;
 }
 </style>
+<title>Login - Alfa0</title>
+<meta charset="utf-8">
 </head>
 <body>
 
-<h2>Login Form</h2>
+<h2>Login</h2>
   <div class="imgcontainer">
     <img src="img/ambu.png" alt="Avatar" class="avatar">
   </div>
@@ -71,10 +74,10 @@ span.psw {
   <div class="container">
     <form action="checkdata.php" method="post">
     <label for="uname"><b>Username</b></label><br>
-    <input type="text" placeholder="Enter Username" name="Username" required><br>
+    <input type="text" placeholder="Inserisci L'Username" name="Username" required><br>
 
     <label for="psw"><b>Password</b></label><br>
-    <input type="password" placeholder="Enter Password" name="Password" required>
+    <input type="password" placeholder="Inserisci la Password" name="Password" required>
         
     <button type="submit">Login</button>
   </form>

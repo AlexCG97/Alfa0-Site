@@ -11,10 +11,11 @@ if(!isset($_SESSION['login_user'])){
    $usernameWeb = $_SESSION['login_user'];
 }
 ?>
-
+<!DOCTYPE HTML>
 <html>
    <head>
-      <link rel="stylesheet" href="styles.css">
+      <title> Status Ambulanze </title>
+      <meta charset="utf-8">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -23,17 +24,17 @@ if(!isset($_SESSION['login_user'])){
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
       <style>
-footer {
-    padding: 1em;
-    color: white;
-    background-color: black;
-    text-align: center;
-   width:100%;
-   position: fixed;
-    bottom: 0;
-}
-</style>
-   </head>
+      footer {
+         padding: 1em;
+         color: white;
+         background-color: black;
+         text-align: center;
+         width:100%;
+         position: fixed;
+         bottom: 0;
+      }
+      </style>
+</head>
    <body>
       <nav>
          <div class="nav-wrapper green darken-2">

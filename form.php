@@ -7,21 +7,22 @@ if(!isset($_SESSION['login_user'])){
   $usernameWeb = $_SESSION['login_user'];
 }
 ?>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <style>
+<style>
 footer {
     padding: 1em;
     color: white;
     background-color: black;
     text-align: center;
-  width:100%;
-  position: fixed;
+    width:100%;
+    position: fixed;
     bottom: 0;
 }
 </style>
 	<title>Inserimento Dati</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
