@@ -46,7 +46,7 @@ if(!isset($_SESSION['login_user'])){
          </div>
       </nav>
       <div class="row">
-         <table>
+         <table class="striped">
             <thead>
                <tr>
                   <th>ID Chiamata</th>
@@ -63,7 +63,7 @@ if(!isset($_SESSION['login_user'])){
             </thead>
             <tbody>
                <?php
-                  $sql = 'SELECT ID_Chiamata, Nome, Cognome, Via, Numero, Citta, Comune, Motivo_chiamata, codice, macchinaAssegnata FROM chiamate ORDER BY ID_Chiamata DESC';
+                  $sql = 'SELECT ID_Chiamata, Nome, Cognome, Via, Numero, Citta, Comune, Motivo_chiamata, codice, macchinaAssegnata, OrarioPartenza, Orario_ArrivoPosto, Orario_Partenza, Codice_Rientro, Orario_PS, Orario_Libero FROM chiamate ORDER BY ID_Chiamata DESC';
                   mysqli_select_db($conn, $dbname);
                   $retval = mysqli_query( $conn, $sql);
                   if(! $retval ) {
@@ -91,6 +91,27 @@ if(!isset($_SESSION['login_user'])){
                      echo($row['codice']);
                      echo("</td> <td>");
                      echo($row['macchinaAssegnata']);
+                     echo("</td></tr>");
+                     echo("<tr><td>");
+                     echo("<b>Orario Partenza</b>");
+                     echo("</td><td>");
+                     echo($row['OrarioPartenza']);
+                     echo("</td><td>");
+                     echo("<b>Orario Arrivo sul Posto</b>");
+                     echo("</td><td>");
+                     echo($row['Orario_ArrivoPosto']);
+                     echo("</td><td>");
+                     echo("<b>Orario Partenza dal Posto</b>");
+                     echo("</td><td>");
+                     echo($row['Orario_Partenza']);
+                     echo("</td><td>");
+                     echo("<b>Orario Arrivo PS</b>");
+                     echo("</td><td>");
+                     echo($row['Orario_PS']);
+                     echo("</td><td>");
+                     echo("<b>Orario Libero</b>");
+                     echo("</td><td>");
+                     echo($row['Orario_Libero']);
                      echo("</td></tr>");
                   }
    ?>

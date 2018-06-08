@@ -2,7 +2,6 @@
 require_once('dati.php');
 $con=mysqli_connect($servername,$username,$password,$dbname);
    session_start();
-   
    if($_SERVER["REQUEST_METHOD"] == "POST") {     
       $myusername = $_POST['Username'];
       $userpassword = $_POST['Password']; 

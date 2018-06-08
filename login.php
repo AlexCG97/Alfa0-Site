@@ -73,7 +73,7 @@ span.psw {
 
   <div class="container">
     <form action="checkdata.php" method="post">
-    <label for="uname"><b>Username</b></label><br>
+    <label for="unsername"><b>Username</b></label><br>
     <input type="text" placeholder="Inserisci L'Username" name="Username" required><br>
 
     <label for="psw"><b>Password</b></label><br>
